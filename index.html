@@ -9,119 +9,168 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="icon" href="img/wp-favicon.png" sizes="16x16 24x24 32x32 48x48 64x64 128x128">
-
 </head>
 <body>
     
     <div id="app" class="container">
 
-        <!-- !!! Left -->
+        <!-- ! Left Section ! -->
         <div class="left-section">
 
-            <!-- User's profile info -->
-            <div class="user-header">
+            <!-- User's Profile Info -->
+            <div class="user-header flex p-10">
 
-                <!-- User's avater -->
-                <div class="user-info flex">
-                    <img src="img/alex.jpg" alt="Alex Avatar" class="radius">
+                <!-- User's avatar -->
+                <div class="user-info">
+                    <img src="img/alex.jpg" alt="Alex Avatar" class="radius m-10-lr">
                 </div>
 
                 <!-- User's comands -->
                 <div class="user-comands">
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-comment-alt"></i>
-                    <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-circle-notch" title="Stories"></i>
+                    <i class="fas fa-comment-alt" title="New Chat"></i>
+                    <i class="fas fa-ellipsis-v" title="Menu"></i>
                 </div>
 
             </div>
 
-            <!-- Nofification -->
-            <div class="notifications">
+            <!-- Activate Nofification -->
+            <div class="notifications p-10">
+
                 <i class="fas fa-bell-slash radius"></i>
-                <div class="notification-text flex-column">
-                    <span>Get notified of new message</span>
-                    <span class="toggle-link-notification">Turn on desktop notifications</span>
+
+                <div class="notification-text flex-column p-10">
+                    <p>Get notified of new message</p>
+                    <p class="turn-on-notification">Turn on desktop notifications</p>
                 </div>
+                
             </div>
 
             <!-- SearchBar -->
-            <div class="searchbar">
+            <div class="searchbar text-center">
                 <input type="text" placeholder="&#128269; Search or start a new chat">
             </div>
 
-            <!-- Chats -->
+            <!-- Chats box -->
             <div class="chats">
 
                 <!-- Chat 1 -->
                  <div class="contact">
+
                      <img src="img/elon-musk.jpg" alt="Avatar elon-musk" class="radius m-10-lr">
+
                      <div class="chat-info m-10-lr">
                          <h4>Elon Musk</h4>
                          <p class="mex-preview">Starship SN9 High-Altitude Flight Test coming soon!</p>
                      </div>
+
                  </div>
 
                  <!-- Chat 2 -->
                  <div class="contact">
+
                     <img src="img/steve-jobs-jps.jpg" alt="Avatar steve-jobs" class="radius m-10-lr">
+
                     <div class="chat-info m-10-lr">
                         <h4>Steve Jobs</h4>
                         <p class="mex-preview">Apple is great, but it's just not the same without me...</p>
                     </div>
+
                 </div>
 
                 <!-- Chat 3 -->
                 <div class="contact">
+
                     <img src="img/jeff-bezos.jpg" alt="Avatar jeff-bezos" class="radius m-10-lr">
+
                     <div class="chat-info m-10-lr">
                         <h4>Jeff Bezos</h4>
                         <p class="mex-preview">You've become Amazon's new CTO!</p>
                     </div>
+
                 </div>
 
                 <!-- Chat 4 -->
                 <div class="contact">
+
                     <img src="img/boolean.png" alt="Avatar boolean" class="radius m-10-lr">
+
                     <div class="chat-info m-10-lr">
                         <h4>Boolean</h4>
                         <p class="mex-preview">Change your life with a click!</p>
                     </div>
+
                 </div>
 
-                
             </div>
 
         </div>
 
-        <!-- !!! Right -->
-        <!-- Chat Stucture -->
+        <!-- ! Right Section ! -->
         <div class="right-section">
+        <!-- Chat Stucture -->
 
             <!-- Chat info -->
-            <div class="chat-header">
+            <div class="chat-header flex text-center p-10">
+                
                 <img src="img/elon-musk.jpg" alt="Avatar boolean" class="radius m-10-lr">
-                <div class="chat-info m-10-lr">
+
+                <div class="chat-info">
                     <h4>Elon Musk</h4>
                     <p>Last seen: 5 minutes ago</p>
                 </div>
+
                 <div class="user-comands">
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-search" title="Search"></i>
+                    <i class="fas fa-paperclip" title="Share Content"></i>
+                    <i class="fas fa-ellipsis-v" title="Menu"></i>
                 </div>
 
             </div>
 
-            <!-- Chat body -->
-            <div class="chat-main">
+            <!-- Chat Body -->
+            <div class="chat-main clearfix">
+
+                <!-- Received Message -->
+                <div class="received-message float-left">
+
+                    <div class="received-text">
+                        <p>Starship SN9 High-Altitude Flight Test coming soon!</p>
+                    </div>
+
+                    <div class="received-text">
+                        <p>Thanks for making the software.</p>
+                    </div>
+                    
+                </div>
+
+                <!-- Sent Message -->
+                <div class="sent-message float-right">
+
+                    <div class="sent-text">
+                        <p>It was an honor to work with you!</p>
+                    </div>
+
+                </div>
+
+                <!-- Received Message -->
+                <div class="received-message float-left">
+
+                    <div class="received-text">
+                        <p>In a few days I will contact you for a new job.</p>
+                    </div>
+                    
+                </div>
 
             </div>
 
-            <!-- User's comands -->
-            <div class="chat-footer">
-                <i class="far fa-smile"></i>
+            <!-- Chat Comands -->
+            <div class="chat-footer flex p-10">
+
+                <i class="far fa-smile" title="Emoji"></i>
                     <input type="text" placeholder="Type a message...">
-                <i class="fas fa-microphone"></i>
+                <i class="fas fa-microphone" title="Vocal message"></i>
+
             </div>
 
         </div>

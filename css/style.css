@@ -1,67 +1,64 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
 body {
-    max-width: 1200px;
     background: linear-gradient(to bottom,#009688 0px,#009688 15vh, black 15vh, black 100%);
     background-repeat: no-repeat;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    margin: auto;
     overflow: hidden;
 }
 
 .container {
-    max-width: 1500px;
+    max-width: 1200px;
     height: 100vh;
     margin: auto;
-    padding: 15px 0;
+    padding: 10px 0;
     display: flex;
 }
 
-/* !!! Left section */
+/* ! Left section ! */
 .left-section {
     width: 35%;
     height: 100%;
     border-right: 1px solid #404447;
     background-color: #131c21;
 }
-/* User's box */
+
+/* User's Profile Info */
 .left-section .user-header {
     height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
     background-color: #2a2f32;
 }
-/* Activate notification box */
+
+/* Activate Nofification */
 .left-section .notifications {
     height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
     background-color:#085373;
 }
 .left-section .notifications i {
-    background-color: grey
+    background-color: grey;
+    font-size: 15px;
 }
+
 /* SearchBar */
 .left-section .searchbar {
     border-bottom: 1px solid #242d32;
-    text-align: center;
 }
 .left-section .searchbar input {
     width: 90%;
     margin: 10px 0;
     padding: 8px;
+    border: none;
     border-radius: 20px;
     outline: 0;
     background-color: #323739;
-    border: none;
-    text-align: center;
     color: white;
+    text-align: center;
 }
+
 /* Chats box */
 .left-section .chats {
     height: calc(100% - 201px);
@@ -78,7 +75,8 @@ body {
     background-color: #323739;
 }
 
-/* !!! Right section */
+
+/* ! Right section ! */
 .right-section{
     background-image: url("../img/chat-bg.jpg");
     background-size: contain;
@@ -88,59 +86,91 @@ body {
 /* Chat info */
 .right-section .chat-header {
     height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
     background-color: #2a2f32;
-    text-align: center;
 }
+
 /* Chat body */
 .right-section .chat-main {
     height: calc(100% - 140px);
     overflow: auto;
+    padding: 50px;
 }
-/* Chat user's comands */
+.right-section .chat-main .sent-message,
+.right-section .chat-main .received-message {
+    width: 60%;
+}
+/* Sent Message */
+.right-section .chat-main .sent-message .sent-text {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #056162;
+    margin: 20px 0;
+    position: relative;
+}
+.right-section .chat-main .sent-message .sent-text::before {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color:  #056162;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0da";
+    display: inline-block;
+    vertical-align: middle;
+}
+/* Received Message */
+.right-section .chat-main .received-message .received-text {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #262d31;
+    margin: 20px 0;
+    position: relative;
+}
+.right-section .chat-main .received-message .received-text:before {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color:  #262d31;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0d9";
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Chat Comands */
 .right-section .chat-footer {
     height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
     background-color: #2a2f32;
 }
 .right-section .chat-footer input {
     width: 80%;
     margin: 10px 0;
     padding: 8px;
+    border: none;
     border-radius: 20px;
     outline: 0;
     background-color: #323739;
-    border: none;
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 
-
-
-
-
-
-
-
-/* REUSABLE CLASS */
+/* ****************************** REUSABLE CLASS ****************************** */
 
 img {width: 50px; cursor: pointer;}
+
 i {padding: 10px; cursor: pointer;}
+
 .radius {border-radius: 100%;}
-span {padding: 0 10px;}
 
-.toggle-link-notification {font-size: 0.8rem; text-decoration: underline; color: grey; cursor: pointer;}
+.turn-on-notification {font-size: 0.8rem; text-decoration: underline; color: grey; cursor: pointer;}
 
-
-.flex {display: flex; justify-content: space-between; align-items: center;}
-.flex-column {display: flex; flex-direction: column;}
+.p-10 { padding: 10px; }
 
 .m-10-lr {margin: 0 10px;}
 
@@ -148,3 +178,30 @@ p.mex-preview {
     color: grey;
     font-size: 0.9rem;
 }
+
+/* Align */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* FlexBox */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.float-left { float: left; }
+.float-right { float: right; }
+
+/* **************************************************************************** */
