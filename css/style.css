@@ -3,6 +3,7 @@
 body {
     max-width: 1200px;
     background: linear-gradient(to bottom,#009688 0px,#009688 15vh, black 15vh, black 100%);
+    background-repeat: no-repeat;
     color: white;
     font-family: 'Montserrat', sans-serif;
     margin: auto;
@@ -21,7 +22,7 @@ body {
 .left-section {
     width: 35%;
     height: 100%;
-    border: 1px solid #404447;
+    border-right: 1px solid #404447;
     background-color: #131c21;
 }
 /* User's box */
@@ -142,3 +143,8 @@ span {padding: 0 10px;}
 .flex-column {display: flex; flex-direction: column;}
 
 .m-10-lr {margin: 0 10px;}
+
+p.mex-preview {
+    color: grey;
+    font-size: 0.9rem;
+}
