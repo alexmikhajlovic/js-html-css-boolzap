@@ -8,7 +8,8 @@ body {
     margin: auto;
     overflow: hidden;
 }
-.container{
+
+.container {
     max-width: 1500px;
     height: 100vh;
     margin: auto;
@@ -16,13 +17,14 @@ body {
     display: flex;
 }
 
-/* Left */
-.left-section{
+/* !!! Left section */
+.left-section {
     width: 35%;
     height: 100%;
     border: 1px solid #404447;
     background-color: #131c21;
 }
+/* User's box */
 .left-section .user-header {
     height: 70px;
     display: flex;
@@ -31,6 +33,7 @@ body {
     padding: 10px;
     background-color: #2a2f32;
 }
+/* Activate notification box */
 .left-section .notifications {
     height: 80px;
     display: flex;
@@ -39,8 +42,10 @@ body {
     padding: 10px;
     background-color:#085373;
 }
-.left-section .notifications i {background-color: grey}
-
+.left-section .notifications i {
+    background-color: grey
+}
+/* SearchBar */
 .left-section .searchbar {
     border-bottom: 1px solid #242d32;
     text-align: center;
@@ -56,10 +61,12 @@ body {
     text-align: center;
     color: white;
 }
+/* Chats box */
 .left-section .chats {
     height: calc(100% - 201px);
     overflow: auto;
 }
+/* Single contact */
 .left-section .chats .contact {
     padding: 10px;
     display: flex;
@@ -70,13 +77,14 @@ body {
     background-color: #323739;
 }
 
-/* Right */
+/* !!! Right section */
 .right-section{
     background-image: url("../img/chat-bg.jpg");
     background-size: contain;
     width: 65%;
     height: 100%;
 }
+/* Chat info */
 .right-section .chat-header {
     height: 70px;
     display: flex;
@@ -86,10 +94,12 @@ body {
     background-color: #2a2f32;
     text-align: center;
 }
+/* Chat body */
 .right-section .chat-main {
     height: calc(100% - 140px);
     overflow: auto;
 }
+/* Chat user's comands */
 .right-section .chat-footer {
     height: 70px;
     display: flex;
@@ -118,7 +128,7 @@ body {
 
 
 
-
+/* REUSABLE CLASS */
 
 img {width: 50px; cursor: pointer;}
 i {padding: 10px; cursor: pointer;}
@@ -130,7 +140,5 @@ span {padding: 0 10px;}
 
 .flex {display: flex; justify-content: space-between; align-items: center;}
 .flex-column {display: flex; flex-direction: column;}
-
-
 
 .m-10-lr {margin: 0 10px;}
