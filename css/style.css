@@ -6,6 +6,7 @@ body {
     color: white;
     font-family: 'Montserrat', sans-serif;
     margin: auto;
+    overflow: hidden;
 }
 .container{
     max-width: 1500px;
@@ -19,7 +20,7 @@ body {
 .left-section{
     width: 35%;
     height: 100%;
-    border: 1px solid #242d32;
+    border: 1px solid #404447;
     background-color: #131c21;
 }
 .left-section .user-header {
@@ -44,7 +45,21 @@ body {
     border-bottom: 1px solid #242d32;
     text-align: center;
 }
-
+.left-section .searchbar input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 20px;
+    outline: 0;
+    background-color: #323739;
+    border: none;
+    text-align: center;
+    color: white;
+}
+.left-section .chats {
+    height: calc(100% - 201px);
+    overflow: auto;
+}
 .left-section .chats .contact {
     padding: 10px;
     display: flex;
@@ -57,10 +72,42 @@ body {
 
 /* Right */
 .right-section{
-    background-image: url("..img\chat-bg.jpg");
+    background-image: url("../img/chat-bg.jpg");
+    background-size: contain;
     width: 65%;
     height: 100%;
-    border: 1px solid #242d32;
+}
+.right-section .chat-header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2f32;
+    text-align: center;
+}
+.right-section .chat-main {
+    height: calc(100% - 140px);
+    overflow: auto;
+}
+.right-section .chat-footer {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2f32;
+}
+.right-section .chat-footer input {
+    width: 80%;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 20px;
+    outline: 0;
+    background-color: #323739;
+    border: none;
+    text-align: center;
+    color: white;
 }
 
 
@@ -73,10 +120,7 @@ body {
 
 
 
-
-
-
-img {width: 50px;}
+img {width: 50px; cursor: pointer;}
 i {padding: 10px; cursor: pointer;}
 .radius {border-radius: 100%;}
 span {padding: 0 10px;}
@@ -88,16 +132,5 @@ span {padding: 0 10px;}
 .flex-column {display: flex; flex-direction: column;}
 
 
-
-input {
-    width: 90%;
-    margin: 10px 0;
-    padding: 8px;
-    border-radius: 20px;
-    outline: 0;
-    background-color: #323739;
-    border: none;
-    text-align: center;
-}
 
 .m-10-lr {margin: 0 10px;}
