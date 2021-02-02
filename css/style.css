@@ -10,6 +10,7 @@ body {
 
 .container {
     max-width: 1200px;
+    min-width: 700px;
     height: 100vh;
     margin: auto;
     padding: 10px 0;
@@ -42,21 +43,11 @@ body {
     background-color: grey;
     font-size: 15px;
 }
+.turn-on-notification-link {font-size: 0.7rem; text-decoration: underline; color: grey; cursor: pointer;}
 
 /* SearchBar */
 .left-section .searchbar {
     border-bottom: 1px solid #242d32;
-}
-.left-section .searchbar input {
-    width: 90%;
-    margin: 10px 0;
-    padding: 8px;
-    border: none;
-    border-radius: 20px;
-    outline: 0;
-    background-color: #323739;
-    color: white;
-    text-align: center;
 }
 
 /* Chats box */
@@ -74,10 +65,14 @@ body {
 .left-section .chats .contact:hover{
     background-color: #323739;
 }
+.left-section .chats.list-empty i{
+    font-size: 50px;
+    color: #056162;
+}
 
 
 /* ! Right section ! */
-.right-section{
+.right-section {
     background-image: url("../img/chat-bg.jpg");
     background-size: contain;
     width: 65%;
@@ -95,20 +90,28 @@ body {
     overflow: auto;
     padding: 50px;
 }
-.right-section .chat-main .sent-message,
-.right-section .chat-main .received-message {
+/* Messages */
+.right-section .chat-main .message {
     width: 60%;
-}
-/* Sent Message */
-.right-section .chat-main .sent-message .sent-text {
-    width: 100%;
     padding: 5px 10px;
     border-radius: 10px;
-    background-color: #056162;
     margin: 20px 0;
     position: relative;
+    word-break: break-all;
+    font-size: 0.9rem;
 }
-.right-section .chat-main .sent-message .sent-text::before {
+/* Received messages */
+.right-section .chat-main .message.received {
+    background-color: #262d31;
+    float: left;
+}
+/* Sent messages */
+.right-section .chat-main .message.sent {
+    background-color: #056162;
+    float: right;
+}
+/* Comic book effect with 'balloon' graphic sign */
+.right-section .chat-main .message.sent:before {
     position: absolute;
     right: -5px;
     top: 50%;
@@ -120,16 +123,7 @@ body {
     display: inline-block;
     vertical-align: middle;
 }
-/* Received Message */
-.right-section .chat-main .received-message .received-text {
-    width: 100%;
-    padding: 5px 10px;
-    border-radius: 10px;
-    background-color: #262d31;
-    margin: 20px 0;
-    position: relative;
-}
-.right-section .chat-main .received-message .received-text:before {
+.right-section .chat-main .message.received:before {
     position: absolute;
     left: -5px;
     top: 50%;
@@ -147,42 +141,9 @@ body {
     height: 70px;
     background-color: #2a2f32;
 }
-.right-section .chat-footer input {
-    width: 80%;
-    margin: 10px 0;
-    padding: 8px;
-    border: none;
-    border-radius: 20px;
-    outline: 0;
-    background-color: #323739;
-    color: white;
-    text-align: center;
-}
 
 
 /* ****************************** REUSABLE CLASS ****************************** */
-
-img {width: 50px; cursor: pointer;}
-
-i {padding: 10px; cursor: pointer;}
-
-.radius {border-radius: 100%;}
-
-.turn-on-notification {font-size: 0.8rem; text-decoration: underline; color: grey; cursor: pointer;}
-
-.p-10 { padding: 10px; }
-
-.m-10-lr {margin: 0 10px;}
-
-p.mex-preview {
-    color: grey;
-    font-size: 0.9rem;
-}
-
-/* Align */
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-left { text-align: left; }
 
 /* FlexBox */
 .flex {
@@ -203,5 +164,42 @@ p.mex-preview {
 }
 .float-left { float: left; }
 .float-right { float: right; }
+
+/* Align */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* Show & Hidden */
+.show {display: block;}
+.hidden {display: none;}
+
+/* Input */
+Input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    outline: 0;
+    background-color: #323739;
+    color: white;
+    text-align: center;
+}
+
+img {width: 50px; cursor: pointer;}
+
+i {padding: 10px; cursor: pointer;}
+
+.radius {border-radius: 100%;}
+
+.p-10 { padding: 10px; }
+
+.m-10-lr {margin: 0 10px;}
+
+.small-text {
+    color: grey;
+    font-size: 0.8rem;
+}
 
 /* **************************************************************************** */
