@@ -1,6 +1,8 @@
 var app = new Vue({
     el: ('#app'),
     data: {
+        search: '',
+        counter: 0,
         contacts: [
 
             {
@@ -82,6 +84,12 @@ var app = new Vue({
                 ],
             },
 
-        ]
+        ],
+        
+    },
+    methods: {
+        viewChat(index) {
+            this.counter = index;
+        },
     }
 });

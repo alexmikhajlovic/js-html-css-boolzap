@@ -53,14 +53,16 @@
             </div>
 
             <!-- Chats box generated with Vue.js -->
+            <!-- ! Vue ! -->
             <div class="chats" v-if="contacts.length > 0">
 
-                <div class="contact" v-for="contact in contacts">
+                <div class="contact" v-for="(contact, index) in contacts" @click="viewChat(index)">
 
                     <img :src="contact.avatar" alt="Avatar" class="radius m-10-lr">
                     
                     <div class="chat-info m-10-lr">
                         <h4> {{contact.name}} </h4>
+                        <p class="small-text"> {{ contact.messages[contact.messages.length -1].text }} </p>
                     </div>
 
                 </div>
@@ -81,7 +83,7 @@
             <!-- Chat info -->
             <div class="chat-header flex text-center p-10">
                 
-                <img src="img/elon-musk.jpg" alt="Avatar boolean" class="radius m-10-lr">
+                <img src="img/elon-musk.jpg" alt="Avatar" class="radius m-10-lr">
 
                 <div class="chat-info">
                     <h4>Elon Musk</h4>
@@ -99,20 +101,9 @@
             <!-- Chat Body -->
             <div class="chat-main clearfix">
 
-                <!-- Received Message -->
-                <div class="message received">
-
-                    <p>Starship SN9 High-Altitude Flight Test coming soon!</p>
-
-                    <p>Thanks for making the software.</p>
-                    
-                </div>
-
-                <!-- Sent Message -->
-                <div class="message sent">
-
-                    <p>It was an honor to work with you!</p>
-
+                <!-- ! Vue ! -->
+                <div v-for="(mex, index) in contacts[counter].messages" class="message" :class="(mex.status == 'received') ? 'received' : 'sent'">
+                    <p>{{ mex.text }}</p>
                 </div>
 
             </div>
