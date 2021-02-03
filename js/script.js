@@ -3,6 +3,11 @@ var app = new Vue({
     data: {
         search: '',
         counter: 0,
+        user: {
+            name: 'Alex',
+            avatar: 'img/alex.jpg',
+            visible: true,
+        },
         contacts: [
 
             {
@@ -63,7 +68,12 @@ var app = new Vue({
                         date: '28/03/2020 16:15:22',
                         text: "Yes.",
                         status: 'received'
-                    }
+                    },
+                    {
+                        date: '28/03/2020 10:30:10',
+                        text: "Thanks, I'll do my best.",
+                        status: 'sent'
+                    },
                 ],
             },
             {
@@ -85,11 +95,11 @@ var app = new Vue({
             },
 
         ],
-        
     },
+
     methods: {
         viewChat(index) {
             this.counter = index;
         },
-    }
+    },
 });

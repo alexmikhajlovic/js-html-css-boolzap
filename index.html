@@ -23,7 +23,7 @@
 
                 <!-- User's avatar -->
                 <div class="user-info">
-                    <img src="img/alex.jpg" alt="Alex Avatar" class="radius m-10-lr">
+                    <img :src="user.avatar" :alt="user.name" class="radius m-10-lr" :title="user.name">
                 </div>
 
                 <!-- User's comands -->
@@ -58,11 +58,11 @@
 
                 <div class="contact" v-for="(contact, index) in contacts" @click="viewChat(index)">
 
-                    <img :src="contact.avatar" alt="Avatar" class="radius m-10-lr">
+                    <img :src="contact.avatar" :alt="contact.name" class="radius m-10-lr" :title="contact.name">
                     
                     <div class="chat-info m-10-lr">
                         <h4> {{contact.name}} </h4>
-                        <p class="small-text"> {{ contact.messages[contact.messages.length -1].text }} </p>
+                        <p class="small-text" :title="contact.messages[contact.messages.length -1].text"> {{ contact.messages[contact.messages.length -1].text }} </p>
                     </div>
 
                 </div>
@@ -80,14 +80,14 @@
         <div class="right-section">
         <!-- Chat Stucture -->
 
-            <!-- Chat info -->
+            <!-- Chat Info -->
             <div class="chat-header flex text-center p-10">
                 
-                <img src="img/elon-musk.jpg" alt="Avatar" class="radius m-10-lr">
+                <img :src="contacts[counter].avatar" :alt="contacts[counter].name" class="radius m-10-lr" :title="contacts[counter].name">
 
                 <div class="chat-info">
-                    <h4>Elon Musk</h4>
-                    <p>Last seen: 5 minutes ago</p>
+                    <h4>{{contacts[counter].name}}</h4>
+                    <p class="small-text"></p>
                 </div>
 
                 <div class="user-comands">
@@ -102,7 +102,7 @@
             <div class="chat-main clearfix">
 
                 <!-- ! Vue ! -->
-                <div v-for="(mex, index) in contacts[counter].messages" class="message" :class="(mex.status == 'received') ? 'received' : 'sent'">
+                <div v-for="(mex, index) in contacts[counter].messages" class="message" :class=" (mex.status == 'received') ? 'received' : 'sent' ">
                     <p>{{ mex.text }}</p>
                 </div>
 

@@ -37,10 +37,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#085373;
+    /* background-color:#085373; */
+    background-color: #056162;
 }
 .left-section .notifications i {
     background-color: grey;
+    /* color: #085373; */
+    color: #056162;
     font-size: 15px;
 }
 .turn-on-notification-link {font-size: 0.7rem; text-decoration: underline; color: grey; cursor: pointer;}
@@ -78,19 +81,21 @@ body {
 
 
 /* ! Right section ! */
+/* Chat Stucture */
 .right-section {
     background-image: url("../img/chat-bg.jpg");
     background-size: contain;
     width: 65%;
     height: 100%;
 }
-/* Chat info */
-.right-section .chat-header {
+/* Chat Info & Chat Comands */
+.right-section .chat-header,
+.right-section .chat-footer {
     height: 70px;
     background-color: #2a2f32;
 }
 
-/* Chat body */
+/* Chat Body */
 .right-section .chat-main {
     height: calc(100% - 140px);
     overflow: auto;
@@ -98,7 +103,7 @@ body {
 }
 /* Messages */
 .right-section .chat-main .message {
-    width: 60%;
+    width: 51%;
     padding: 5px 10px;
     border-radius: 10px;
     margin: 20px 0;
@@ -143,11 +148,6 @@ body {
     vertical-align: middle;
 }
 
-/* Chat Comands */
-.right-section .chat-footer {
-    height: 70px;
-    background-color: #2a2f32;
-}
 
 
 /* ****************************** REUSABLE CLASS ****************************** */
