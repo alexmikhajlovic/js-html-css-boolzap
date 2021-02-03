@@ -2,7 +2,7 @@ var app = new Vue({
     el: ('#app'),
     data: {
         search: '',
-        counter: 0,
+        counter: -1,
         user: {
             name: 'Alex',
             avatar: 'img/alex.jpg',

@@ -148,6 +148,25 @@ body {
     vertical-align: middle;
 }
 
+/* Show this at application start */
+.havent-chat {
+    width: 65%;
+    height: 100%;
+    background-color: #222f37;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 1.6;
+}
+.havent-chat img {
+    width: 35%;
+    align-self: center;
+}
+.havent-chat p a {
+    color: #00af9c;
+    text-decoration: none;
+    font-weight: bold;
+}
 
 
 /* ****************************** REUSABLE CLASS ****************************** */
