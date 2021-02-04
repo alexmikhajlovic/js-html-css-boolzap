@@ -1,8 +1,9 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
 body {
-    background: linear-gradient(to bottom,#009688 0px,#009688 15vh, black 15vh, black 100%);
-    background-repeat: no-repeat;
+    /* background: linear-gradient(to bottom,#009688 0px,#009688 15vh, black 15vh, black 100%); */
+    /* background-repeat: no-repeat; */
+    background-color: black;
     color: white;
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
@@ -10,10 +11,10 @@ body {
 
 .container {
     /* max-width: 1200px; */
+    /* padding: 10px 0; */
     min-width: 700px;
     height: 100vh;
     margin: auto;
-    /* padding: 10px 0; */
     display: flex;
 }
 
@@ -37,20 +38,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color:#085373; */
     background-color: #056162;
 }
 .left-section .notifications i {
     background-color: grey;
-    /* color: #085373; */
     color: #056162;
     font-size: 15px;
 }
-.turn-on-notification-link {font-size: 0.7rem; text-decoration: underline; color: grey; cursor: pointer;}
-
-/* SearchBar */
-.left-section .searchbar {
-    border-bottom: 1px solid #242d32;
+.turn-on-notification-link {
+    font-size: 0.7rem;
+    text-decoration: underline;
+    color: grey;
+    cursor: pointer;
 }
 
 /* Chats box */
@@ -61,8 +60,6 @@ body {
 /* Single contact */
 .left-section .chats .contact {
     padding: 10px;
-    display: flex;
-    align-items: center;
     cursor: pointer;
 }
 .left-section .chats .contact:hover{
@@ -73,6 +70,9 @@ body {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+.left-section .chats .contact .chat-info {
+    width: 70%;
 }
 .left-section .chats.list-empty i{
     font-size: 50px;
@@ -101,6 +101,7 @@ body {
     overflow: auto;
     padding: 50px;
 }
+
 /* Messages */
 .right-section .chat-main .message {
     width: 51%;
@@ -134,6 +135,14 @@ body {
     content: "\f0da";
     display: inline-block;
     vertical-align: middle;
+}
+.right-section .chat-main .message.sent p.small-text:after {
+    color: grey;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    display: inline-block;
+    padding: 0 5px;
 }
 .right-section .chat-main .message.received:before {
     position: absolute;
@@ -226,6 +235,10 @@ i {padding: 10px; cursor: pointer;}
 .small-text {
     color: grey;
     font-size: 0.8rem;
+}
+.small-small-text {
+    color: #056162;
+    font-size: 0.6rem;
 }
 
 /* **************************************************************************** */

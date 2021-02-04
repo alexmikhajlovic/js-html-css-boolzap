@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="icon" href="img/wp-favicon.png" sizes="16x16 24x24 32x32 48x48 64x64 128x128">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -49,22 +50,22 @@
 
             <!-- SearchBar -->
             <div class="searchbar text-center">
-                <input type="text" placeholder="&#128269; Search or start a new chat">
+                <input type="text" placeholder="&#128269; Search or start a new chat" v-model="searchInput" @keyup="searchContacts">
             </div>
 
             <!-- Chats box generated with Vue.js -->
             <!-- ! Vue ! -->
             <div class="chats" v-if="contacts.length > 0">
 
-                <div class="contact" v-for="(contact, index) in contacts" @click="viewChat(index)">
+                <div class="contact flex" v-for="(contact, index) in contacts" @click="viewChat(index)" v-if="contact.visible">
 
                     <img :src="contact.avatar" :alt="contact.name" class="radius m-10-lr" :title="contact.name">
                     
-                    <div class="chat-info m-10-lr">
+                    <div class="chat-info m-10-lr text-left">
                         <h4> {{contact.name}} </h4>
                         <p class="small-text" :title="contact.messages[contact.messages.length -1].text"> {{ contact.messages[contact.messages.length -1].text }} </p>
                     </div>
-
+                    <p class="small-small-text text-center" :title="contact.messages[contact.messages.length -1].date"> {{ contact.messages[contact.messages.length -1].date }} </p>
                 </div>
 
             </div>
@@ -104,6 +105,7 @@
                 <!-- ! Vue ! -->
                 <div v-for="(mex, index) in contacts[counter].messages" class="message" :class=" (mex.status == 'received') ? 'received' : 'sent' ">
                     <p>{{ mex.text }}</p>
+                    <p class="small-text text-right">{{ mex.date }}</p>
                 </div>
 
             </div>
@@ -112,22 +114,27 @@
             <div class="chat-footer flex p-10">
 
                 <i class="far fa-smile" title="Emoji"></i>
-                    <input type="text" placeholder="Type a message...">
+                    <input type="text" placeholder="Type a message..." v-model="chatInput" @keydown.enter="sendMessage">
                 <i class="fas fa-microphone" title="Vocal message"></i>
 
             </div>
 
         </div>
 
+        <!-- Show this at application start -->
         <div v-else class="havent-chat text-center">
+
             <img src="img/no-chat.jpg" alt="">
+
             <h2>Keep your phone connected</h2>
+
             <div class="info-text">
                 <p class="small-text">Whatsapp connects to your phone to sync messages.</p>
                 <p class="small-text">To reduce data usage, connect your phone to Wi-Fi.</p>
             </div>
+
             <p><i class="fas fa-desktop"></i> Whatsapp is available for MacOs & Windows <a href="https://www.whatsapp.com/download" target="_blank" rel="noopener noreferrer">Get it here</a>.</p>
-           
+
         </div>
 
     </div>

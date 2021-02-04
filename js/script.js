@@ -1,32 +1,33 @@
 var app = new Vue({
     el: ('#app'),
     data: {
-        search: '',
         counter: -1,
+        searchInput: '',
+        chatInput: '',
         user: {
             name: 'Alex',
             avatar: 'img/alex.jpg',
             visible: true,
         },
         contacts: [
-
+            
             {
                 name: 'Elon Musk',
                 avatar: 'img/elon-musk.jpg',
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '03:00 AM',
                         text: "Starship SN9 High-Altitude Flight Test coming soon!",
                         status: 'received'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '03:01 AM',
                         text: "Thanks for making the software.",
                         status: 'received'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '04:20 AM',
                         text: "It was an honor to work with you!",
                         status: 'sent'
                     }
@@ -38,12 +39,12 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '20/03/2020 16:30:55',
+                        date: '09:41 AM',
                         text: "Apple is great, but it's just not the same without me...",
                         status: 'received'
                     },
                     {
-                        date: '20/03/2020 16:35:00',
+                        date: '09:41 AM',
                         text: "I know...",
                         status: 'sent'
                     }
@@ -55,22 +56,22 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '28/03/2020 10:10:40',
+                        date: '10:10 AM',
                         text: "You've become Amazon's new CTO!",
                         status: 'received'
                     },
                     {
-                        date: '28/03/2020 10:20:10',
+                        date: '10:20 AM',
                         text: "Are you sure you haven't got the wrong chat?",
                         status: 'sent'
                     },
                     {
-                        date: '28/03/2020 16:15:22',
+                        date: '16:15 PM',
                         text: "Yes.",
                         status: 'received'
                     },
                     {
-                        date: '28/03/2020 10:30:10',
+                        date: '10:30 AM',
                         text: "Thanks, I'll do my best.",
                         status: 'sent'
                     },
@@ -82,12 +83,12 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '15:30 PM',
                         text: "Change your life with a click!",
                         status: 'received'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '15:50 PM',
                         text: "Already done!",
                         status: 'sent'
                     }
@@ -101,5 +102,18 @@ var app = new Vue({
         viewChat(index) {
             this.counter = index;
         },
+        searchContacts(){
+            this.contacts.forEach(element => {
+                (element.name.toLowerCase().includes(this.searchInput.toLowerCase())) ? element.visible = true : element.visible = false;
+            });
+        },
+        sendMessage(){
+            this.contacts[this.counter].messages.push( {date: moment().format('LT'), text: this.chatInput, status: 'sent'} );
+            this.chatInput = '';
+            setTimeout(this.receiveMessage,1000);
+        },
+        receiveMessage(){
+            this.contacts[this.counter].messages.push( {date: moment().format('LT'), text: 'Ok', status: 'received'} );
+        }
     },
 });
