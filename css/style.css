@@ -241,4 +241,10 @@ i {padding: 10px; cursor: pointer;}
     font-size: 0.6rem;
 }
 
+.is-typing{
+    color: #056162;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
 /* **************************************************************************** */

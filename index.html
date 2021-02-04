@@ -63,7 +63,9 @@
                     
                     <div class="chat-info m-10-lr text-left">
                         <h4> {{contact.name}} </h4>
-                        <p class="small-text" :title="contact.messages[contact.messages.length -1].text"> {{ contact.messages[contact.messages.length -1].text }} </p>
+                        <p v-if="!contact.isTyping" class="small-text" :title="contact.messages[contact.messages.length -1].text"> {{ contact.messages[contact.messages.length -1].text }} </p>
+                        <!-- Use this while we wait for the message to be sent -->
+                        <p v-else class="is-typing"><em>Is typing...</em></p>
                     </div>
                     <p class="small-small-text text-center" :title="contact.messages[contact.messages.length -1].date"> {{ contact.messages[contact.messages.length -1].date }} </p>
                 </div>
@@ -88,7 +90,7 @@
 
                 <div class="chat-info">
                     <h4>{{contacts[counter].name}}</h4>
-                    <p class="small-text"></p>
+                    <p v-if="contacts.isTyping" class="is-typing"><em>Is typing...</em></p>
                 </div>
 
                 <div class="user-comands">

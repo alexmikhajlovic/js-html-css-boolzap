@@ -15,6 +15,7 @@ var app = new Vue({
                 name: 'Elon Musk',
                 avatar: 'img/elon-musk.jpg',
                 visible: true,
+                isTyping: false,
                 messages: [
                     {
                         date: '03:00 AM',
@@ -37,6 +38,7 @@ var app = new Vue({
                 name: 'Steve Jobs',
                 avatar: 'img/steve-jobs-jps.jpg',
                 visible: true,
+                isTyping: false,
                 messages: [
                     {
                         date: '09:41 AM',
@@ -54,6 +56,7 @@ var app = new Vue({
                 name: 'Jeff Bezos',
                 avatar: 'img/jeff-bezos.jpg',
                 visible: true,
+                isTyping: false,
                 messages: [
                     {
                         date: '10:10 AM',
@@ -81,6 +84,7 @@ var app = new Vue({
                 name: 'Boolean',
                 avatar: 'img/boolean.png',
                 visible: true,
+                isTyping: false,
                 messages: [
                     {
                         date: '15:30 PM',
@@ -111,9 +115,11 @@ var app = new Vue({
             this.contacts[this.counter].messages.push( {date: moment().format('LT'), text: this.chatInput, status: 'sent'} );
             this.chatInput = '';
             setTimeout(this.receiveMessage,1000);
+            this.contacts[this.counter].isTyping = true;
         },
         receiveMessage(){
             this.contacts[this.counter].messages.push( {date: moment().format('LT'), text: 'Ok', status: 'received'} );
+            this.contacts[this.counter].isTyping = false;
         }
     },
 });
